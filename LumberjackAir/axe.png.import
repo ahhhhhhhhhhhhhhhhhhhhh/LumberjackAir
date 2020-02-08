@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/big_axe.png-1232a0592364c004b8f0e9a91c915ead.stex"
+path="res://.import/axe.png-4bc9ac444747047d74a0e175e1420d1e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://big_axe.png"
-dest_files=[ "res://.import/big_axe.png-1232a0592364c004b8f0e9a91c915ead.stex" ]
+source_file="res://axe.png"
+dest_files=[ "res://.import/axe.png-4bc9ac444747047d74a0e175e1420d1e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
