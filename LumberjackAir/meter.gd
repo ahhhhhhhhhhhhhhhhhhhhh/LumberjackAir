@@ -26,4 +26,4 @@ func _input(event):
 	if Input.is_key_pressed(KEY_SPACE) and event is InputEventKey and not event.is_echo():
 		var score = 100 - abs($ticker.rotation_degrees)
 		print("Score is ", score)
-		
+		self.get_parent().launch_game(score)
