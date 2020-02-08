@@ -16,8 +16,10 @@ func _process(delta):
 		var axe = load("res://axe.tscn").instance()
 		var axe_body = axe.get_node("body") #pulls out rigidbody of the axe
 		axe_body.angular_velocity = -4
-		axe_body.position.y += 80
-		self.add_child(axe)
+		axe_body.position = self.position
+		axe_body.position.x -= 80
+		self.get_parent().add_child(axe)
+		#self.add_child(axe)
 	
 	var collision = self.move_and_collide(Vector2(0, -y_velocity))
 	if collision:
