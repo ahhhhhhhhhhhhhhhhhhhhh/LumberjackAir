@@ -15,3 +15,4 @@ func _ready():
 #called by launch.gd when putting up the game scene
 func setup(score):
 	$Player.y_velocity = score / 6 #6 is completely arbitrary
+	$Player.x_velocity = score / 6
