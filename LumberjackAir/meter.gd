@@ -27,3 +27,4 @@ func _input(event):
 		var score = 100 - abs($ticker.rotation_degrees)
 		print("Score is ", score)
 		self.get_parent().launch_game(score)
+		rds = 0

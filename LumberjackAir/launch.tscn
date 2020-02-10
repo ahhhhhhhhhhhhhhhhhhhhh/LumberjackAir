@@ -4,7 +4,7 @@
 [ext_resource path="res://meter.png" type="Texture" id=2]
 [ext_resource path="res://meter.gd" type="Script" id=3]
 [ext_resource path="res://ticker.png" type="Texture" id=4]
-[ext_resource path="res://drone.png" type="Texture" id=5]
+[ext_resource path="res://Catapult.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -46,9 +46,5 @@ scale = Vector2( 1, 1.2 )
 texture = ExtResource( 4 )
 offset = Vector2( 0, -13 )
 
-[node name="drone" type="Sprite" parent="."]
-position = Vector2( 657.083, 370.014 )
-scale = Vector2( 5, 5 )
-texture = ExtResource( 5 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Catapult" parent="." instance=ExtResource( 5 )]
+position = Vector2( 289.215, -10.4034 )
