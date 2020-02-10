@@ -44,31 +44,25 @@ position = Vector2( 250, 160 )
 scale = Vector2( 5, 5 )
 
 [node name="cloud" type="Sprite" parent="background"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 
 [node name="cloud2" type="Sprite" parent="background"]
 position = Vector2( -354, -26 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( 453.644, -91.9189 )
 
 [node name="cloud3" type="Sprite" parent="background"]
 position = Vector2( 287.241, 39.4077 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 
 [node name="cloud4" type="Sprite" parent="background"]
 position = Vector2( 221.52, -214.369 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 
 [node name="cloud5" type="Sprite" parent="background"]
 position = Vector2( 47.7801, -247.555 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 
 [node name="cloud6" type="Sprite" parent="background"]
 position = Vector2( 324.403, -133.108 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
