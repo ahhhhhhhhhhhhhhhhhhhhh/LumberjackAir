@@ -1,9 +1,6 @@
 extends Node2D
 var animation_finished = false
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var rds = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +8,16 @@ func _ready():
 	pass # Replace with function body.
 
 func start_animation():
-	$catapultpult.rds= 60
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	rds= 60
+
+
+
+func _process(delta):
+	
+	$catapultpult.rotation_degrees += rds *-delta 
+	if $catapultpult.rotation_degrees < -50:
+		rds = 0
+		animation_finished = true
+	
+
+

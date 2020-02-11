@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/catapult part 2.png-583d9ba3e439760d3f21355f6ca2898b.stex"
+path="res://.import/catapultBase.png-5bd337c9b5ccca05babdd2d723b87403.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://catapult part 2.png"
-dest_files=[ "res://.import/catapult part 2.png-583d9ba3e439760d3f21355f6ca2898b.stex" ]
+source_file="res://catapultBase.png"
+dest_files=[ "res://.import/catapultBase.png-5bd337c9b5ccca05babdd2d723b87403.stex" ]
 
 [params]
 
