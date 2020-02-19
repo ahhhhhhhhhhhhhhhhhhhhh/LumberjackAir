@@ -12,7 +12,7 @@
 extents = Vector2( 512, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 22.8408, 48.391 )
+extents = Vector2( 10.3782, 60.4445 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
