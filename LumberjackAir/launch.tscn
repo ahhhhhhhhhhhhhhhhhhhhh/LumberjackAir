@@ -39,8 +39,8 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="meter" type="Sprite" parent="."]
-position = Vector2( 168.679, 403.768 )
-scale = Vector2( 5.14799, 5.63727 )
+position = Vector2( 100, 500 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 __meta__ = {

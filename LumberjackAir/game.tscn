@@ -2,9 +2,9 @@
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://playercontroller.gd" type="Script" id=2]
-[ext_resource path="res://Camera2D.gd" type="Script" id=3]
-[ext_resource path="res://Lumber Jack 1.png" type="Texture" id=4]
-[ext_resource path="res://mountains.png" type="Texture" id=5]
+[ext_resource path="res://Lumber Jack 1.png" type="Texture" id=3]
+[ext_resource path="res://mountains.png" type="Texture" id=4]
+[ext_resource path="res://trees.gd" type="Script" id=5]
 [ext_resource path="res://ground.png" type="Texture" id=6]
 [ext_resource path="res://Cloud 1.png" type="Texture" id=7]
 
@@ -34,14 +34,13 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="Player"]
 rotation = -1.5708
 current = true
-script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 2 )
 
 [node name="guy" type="Sprite" parent="Player"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -52,11 +51,12 @@ motion_mirroring = Vector2( 1077, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/mountains"]
 position = Vector2( 0, -525 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 centered = false
 
 [node name="trees" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 1 )
+script = ExtResource( 5 )
 
 [node name="ground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 1025, 0 )
