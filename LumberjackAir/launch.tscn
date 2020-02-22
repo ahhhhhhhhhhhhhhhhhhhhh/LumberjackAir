@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://launch.gd" type="Script" id=1]
-[ext_resource path="res://Cloud 1.png" type="Texture" id=2]
-[ext_resource path="res://meter.png" type="Texture" id=3]
-[ext_resource path="res://meter.gd" type="Script" id=4]
-[ext_resource path="res://ticker.png" type="Texture" id=5]
-[ext_resource path="res://Catapult.tscn" type="PackedScene" id=6]
+[ext_resource path="res://meter.png" type="Texture" id=2]
+[ext_resource path="res://meter.gd" type="Script" id=3]
+[ext_resource path="res://ticker.png" type="Texture" id=4]
+[ext_resource path="res://Catapult.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -33,24 +32,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Cloud 1" type="Sprite" parent="Control"]
-position = Vector2( 700.116, 177.886 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 2 )
-
 [node name="meter" type="Sprite" parent="."]
 position = Vector2( 100, 500 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-script = ExtResource( 4 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="ticker" type="Sprite" parent="meter"]
 scale = Vector2( 1, 1.2 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( 0, -13 )
 
-[node name="Catapult" parent="." instance=ExtResource( 6 )]
+[node name="Catapult" parent="." instance=ExtResource( 5 )]
 position = Vector2( 289.215, -10.4034 )

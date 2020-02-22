@@ -16,6 +16,9 @@ func _process(delta):
 	#moves the ground along with the player
 	get_parent().get_node("ground").position.x = self.position.x
 	
+	#Way to change background color if you want to change it with altitude
+	#VisualServer.set_default_clear_color(#color#)
+	
 	if manual_move_mode:
 		y_velocity = 0
 		x_velocity = 0
