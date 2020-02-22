@@ -13,8 +13,8 @@ func _ready():
 	generator.parallax_layer = self
 	generator.move_over = 35
 	generator.move_random = 30
-	generator.y_placement = -90
-	generator.y_random = 0
+	generator.y_placement = -80
+	generator.y_random = 10
 
 	#giving it images to work with
 	for i in range(1, 8):
