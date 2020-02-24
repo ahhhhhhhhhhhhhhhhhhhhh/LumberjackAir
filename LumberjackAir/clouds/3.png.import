@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mountains.png-a73ae7694ccd9243cef40d5294749b42.stex"
+path="res://.import/3.png-accac43f44eea85c1377e32a5275f3f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mountains.png"
-dest_files=[ "res://.import/Mountains.png-a73ae7694ccd9243cef40d5294749b42.stex" ]
+source_file="res://clouds/3.png"
+dest_files=[ "res://.import/3.png-accac43f44eea85c1377e32a5275f3f0.stex" ]
 
 [params]
 
