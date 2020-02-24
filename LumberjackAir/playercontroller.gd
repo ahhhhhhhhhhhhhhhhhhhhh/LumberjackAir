@@ -7,14 +7,18 @@ var max_velocity = 15
 
 var manual_move_mode = false
 
+var ground = null
+var starting_x = null #used for determining distance traveled later
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	ground = get_parent().get_node("ground")
+	starting_x = self.position.x
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#moves the ground along with the player
-	get_parent().get_node("ground").position.x = self.position.x
+	ground.position.x = self.position.x
 	
 	#Way to change background color if you want to change it with altitude
 	#VisualServer.set_default_clear_color(#color#)
@@ -53,3 +57,7 @@ func _process(delta):
 		var collision = self.move_and_collide(Vector2(x_velocity, -y_velocity))
 		if collision:
 			y_velocity = 0
+			x_velocity = 0
+			if collision.collider == ground:
+				var distance_traveled = int(self.position.x - starting_x)
+				print("You traveled ", distance_traveled, " feet")
