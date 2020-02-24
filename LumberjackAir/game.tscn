@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://playercontroller.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://clouds.gd" type="Script" id=5]
 [ext_resource path="res://trees.gd" type="Script" id=6]
 [ext_resource path="res://ground.png" type="Texture" id=7]
+[ext_resource path="res://game_end.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 512, 10 )
@@ -69,3 +70,9 @@ motion_mirroring = Vector2( 1025, 0 )
 scale = Vector2( 1025, 300 )
 texture = ExtResource( 7 )
 centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="game_end" parent="CanvasLayer" instance=ExtResource( 8 )]
+pause_mode = 2
+visible = false

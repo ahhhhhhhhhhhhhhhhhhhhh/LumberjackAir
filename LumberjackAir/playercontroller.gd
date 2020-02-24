@@ -61,3 +61,4 @@ func _process(delta):
 			if collision.collider == ground:
 				var distance_traveled = int(self.position.x - starting_x)
 				print("You traveled ", distance_traveled, " feet")
+				get_parent().get_node("CanvasLayer/game_end").setup(distance_traveled)

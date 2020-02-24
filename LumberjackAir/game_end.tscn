@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game_end.gd" type="Script" id=1]
+[ext_resource path="res://white.png" type="Texture" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="white" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.262745 )
+scale = Vector2( 1024, 600 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Ft_label" type="Label" parent="."]
+margin_left = 201.908
+margin_top = 254.891
+margin_right = 378.908
+margin_bottom = 268.891
+rect_scale = Vector2( 3, 3 )
+text = "You went somenumber feet"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 515.511
+margin_top = 67.3028
+margin_right = 555.511
+margin_bottom = 81.3028
+rect_scale = Vector2( 4, 4 )
+text = "YAY!"
+
+[node name="play_again" type="Button" parent="."]
+margin_left = 420.902
+margin_top = 423.06
+margin_right = 497.902
+margin_bottom = 443.06
+rect_scale = Vector2( 3, 3 )
+text = "Play Again"
+[connection signal="pressed" from="play_again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="play_again" to="." method="_on_Button_pressed"]
