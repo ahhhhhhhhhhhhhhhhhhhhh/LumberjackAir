@@ -17,7 +17,8 @@ func _ready():
 	generator.y_random = 600
 	
 	#giving it image(s) to work with
-	generator.add_image_path("res://clouds/1.png")
+	for i in range(1, 7):
+		generator.add_image_path("res://clouds/" + str(i) + ".png")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
