@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://game_end.gd" type="Script" id=1]
 [ext_resource path="res://white.png" type="Texture" id=2]
@@ -9,6 +9,10 @@ size = 48
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 48
 font_data = ExtResource( 3 )
 
@@ -29,7 +33,7 @@ margin_top = 254.891
 margin_right = 378.908
 margin_bottom = 268.891
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "You went somenumber feet"
 
 [node name="Label" type="Label" parent="."]
@@ -38,15 +42,20 @@ margin_top = 67.3028
 margin_right = 555.511
 margin_bottom = 81.3028
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "YAY!"
 
 [node name="play_again" type="Button" parent="."]
-margin_left = 420.902
-margin_top = 423.06
-margin_right = 497.902
-margin_bottom = 443.06
-rect_scale = Vector2( 3, 3 )
-text = "Play Again"
+margin_left = 379.0
+margin_top = 435.0
+margin_right = 628.0
+margin_bottom = 478.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0.156863, 0.784314, 0.156863, 1 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+custom_colors/font_color_hover = Color( 0.298039, 0.4, 0.87451, 1 )
+text = "[Play Again]"
+flat = true
 [connection signal="pressed" from="play_again" to="." method="_on_play_again_pressed"]
-[connection signal="pressed" from="play_again" to="." method="_on_Button_pressed"]
