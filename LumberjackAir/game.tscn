@@ -46,7 +46,7 @@ texture = ExtResource( 3 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="mountains" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 1 )
+motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 1077, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/mountains"]
