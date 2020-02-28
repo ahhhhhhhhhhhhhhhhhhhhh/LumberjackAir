@@ -38,8 +38,8 @@ func _process(delta):
 			self.position.y += 150 * delta
 	
 	else:
-		y_velocity -= 4 * delta
-		x_velocity *= 0.995 #needs to be delta-adjusted somehow
+		y_velocity -= 8.2 * delta
+		x_velocity *= 0.998 #needs to be delta-adjusted somehow
 		x_velocity = max(x_velocity, 0) #drag can't make you go backwards
 		
 		x_velocity = min(x_velocity, max_velocity)
@@ -56,7 +56,7 @@ func _process(delta):
 			axe_body.position.x -= 80
 			self.get_parent().add_child(axe)
 		
-		var collision = self.move_and_collide(Vector2(x_velocity, -y_velocity))
+		var collision = self.move_and_collide(Vector2(x_velocity, -y_velocity/1.2))
 		if collision:
 			y_velocity = 0
 			x_velocity = 0
@@ -66,4 +66,4 @@ func _process(delta):
 				get_parent().get_node("CanvasLayer/game_end").setup(distance_traveled)
 	
 	
-	$guy.rotation_degrees = -y_velocity * 1.75
+	$guy.rotation_degrees = -y_velocity
