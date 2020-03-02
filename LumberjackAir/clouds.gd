@@ -10,7 +10,8 @@ func _ready():
 	#configuring the background generator's settings
 	generator.margin = 200
 	generator.sprite_scale = Vector2(3, 3)
-	generator.parallax_layer = self
+	generator.layer = self
+	generator.motion_scale = self.motion_scale
 	generator.move_over = 150
 	generator.move_random = 80
 	generator.y_placement = -260
