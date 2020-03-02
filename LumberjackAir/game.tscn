@@ -67,7 +67,6 @@ motion_scale = Vector2( 0.75, 1 )
 script = ExtResource( 6 )
 
 [node name="ground" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
 motion_mirroring = Vector2( 1025, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ground"]
