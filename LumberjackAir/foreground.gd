@@ -7,7 +7,7 @@ func _ready():
 	generator = load("res://bg_generator.gd").new()
 	
 	#configuring the background generator's settings
-	generator.margin = 200
+	generator.margin = 400
 	generator.layer = self
 	generator.move_over = 400
 	generator.move_random = 200

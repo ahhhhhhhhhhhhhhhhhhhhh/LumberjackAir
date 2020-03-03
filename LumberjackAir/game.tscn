@@ -36,6 +36,7 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 rotation = -1.5708
+offset = Vector2( 125, 0 )
 current = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]

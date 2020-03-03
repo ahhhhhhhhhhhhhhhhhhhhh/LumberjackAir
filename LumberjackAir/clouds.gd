@@ -8,7 +8,7 @@ func _ready():
 	generator = load("res://bg_generator.gd").new()
 	
 	#configuring the background generator's settings
-	generator.margin = 200
+	generator.margin = 400
 	generator.sprite_scale = Vector2(3, 3)
 	generator.layer = self
 	generator.motion_scale = self.motion_scale

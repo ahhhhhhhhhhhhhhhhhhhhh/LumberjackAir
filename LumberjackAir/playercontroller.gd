@@ -66,4 +66,4 @@ func _process(delta):
 				get_parent().get_node("CanvasLayer/game_end").setup(distance_traveled)
 	
 	
-	$guy.rotation_degrees = -y_velocity
+	self.rotation_degrees = 90 - y_velocity
