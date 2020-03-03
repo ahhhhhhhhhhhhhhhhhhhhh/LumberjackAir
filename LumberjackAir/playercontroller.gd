@@ -6,7 +6,7 @@ var x_velocity = 0
 var max_velocity = 15
 
 
-var manual_move_mode = false
+var manual_move_mode = true
 
 var ground = null
 var starting_x = null #used for determining distance traveled later
