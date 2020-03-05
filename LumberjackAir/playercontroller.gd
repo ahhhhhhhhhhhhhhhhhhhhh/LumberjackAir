@@ -7,6 +7,7 @@ var max_velocity = 15
 
 
 var manual_move_mode = false
+var fast_shoot_mode = false
 
 var ground = null
 var starting_x = null #used for determining distance traveled later
@@ -45,7 +46,8 @@ func _process(delta):
 		x_velocity = min(x_velocity, max_velocity)
 		y_velocity = min(y_velocity, max_velocity)
 		
-		if Input.is_action_just_pressed("jump"):
+		if (fast_shoot_mode and Input.is_action_pressed("jump")) or Input.is_action_just_pressed("jump"):
+		
 			y_velocity += 5
 			x_velocity += 2
 			
