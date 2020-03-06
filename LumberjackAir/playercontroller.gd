@@ -22,6 +22,11 @@ func _process(delta):
 	#moves the ground along with the player
 	ground.position.x = self.position.x
 	
+	if Input.is_action_just_pressed("1"):
+		manual_move_mode = not manual_move_mode
+		
+	if Input.is_action_just_pressed("2"):
+		fast_shoot_mode = not fast_shoot_mode
 	
 	#Way to change background color if you want to change it with altitude
 	#VisualServer.set_default_clear_color(#color#)
@@ -60,12 +65,16 @@ func _process(delta):
 		
 		var collision = self.move_and_collide(Vector2(x_velocity, -y_velocity/1.2))
 		if collision:
-			y_velocity = 0
-			x_velocity = 0
 			if collision.collider == ground:
+				y_velocity = 0
+				x_velocity = 0
 				var distance_traveled = int(self.position.x - starting_x)
 				print("You traveled ", distance_traveled, " feet")
 				get_parent().get_node("CanvasLayer/game_end").setup(distance_traveled)
+			else:
+				y_velocity = 0.5 * y_velocity
+				x_velocity = 0.5 * x_velocity
+				collision.collider.queue_free()
 	
 	
 	self.rotation_degrees = 90 - y_velocity
