@@ -49,7 +49,7 @@ func _process(delta):
 		if (fast_shoot_mode and Input.is_action_pressed("jump")) or Input.is_action_just_pressed("jump"):
 		
 			y_velocity += 5
-			x_velocity += 2
+			x_velocity += 1.3
 			
 			var axe = load("res://axe.tscn").instance()
 			var axe_body = axe.get_node("body") #pulls out rigidbody of the axe
