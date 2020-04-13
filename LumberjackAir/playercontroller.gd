@@ -8,6 +8,7 @@ var max_velocity = 15
 
 var manual_move_mode = false
 var fast_shoot_mode = false
+var launched = false
 
 var ground = null
 var starting_x = null #used for determining distance traveled later
@@ -42,8 +43,8 @@ func _process(delta):
 			self.position.y -= 150 * delta
 		if Input.is_key_pressed(KEY_DOWN):
 			self.position.y += 150 * delta
-	
-	else:
+			
+	elif launched:
 		y_velocity -= 8.2 * delta
 		x_velocity *= 0.998 #needs to be delta-adjusted somehow
 		x_velocity = max(x_velocity, 0) #drag can't make you go backwards

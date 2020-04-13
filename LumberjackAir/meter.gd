@@ -2,6 +2,7 @@ extends Sprite
 
 var rds = 200 #rotation direction and speed, toggles between it and negative it
 var bounds = [-90, 90] #left bound, right bound
+var launched = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,8 +24,9 @@ func _process(delta):
 	$ticker.rotation_degrees = rotation
 
 func _input(event):
-	if Input.is_key_pressed(KEY_SPACE) and event is InputEventKey and not event.is_echo():
+	if Input.is_key_pressed(KEY_SPACE) and event is InputEventKey and not event.is_echo() and not launched:
 		var score = 100 - abs($ticker.rotation_degrees)
 		print("Score is ", score)
 		self.get_parent().launch_game(score)
 		rds = 0
+		launched = true

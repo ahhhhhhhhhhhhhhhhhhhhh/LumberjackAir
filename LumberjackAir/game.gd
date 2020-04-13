@@ -17,3 +17,4 @@ func _ready():
 func setup(score):
 	$Player.y_velocity = score / 6 #6 is completely arbitrary
 	$Player.x_velocity = score / 6
+	$Player.launched = true

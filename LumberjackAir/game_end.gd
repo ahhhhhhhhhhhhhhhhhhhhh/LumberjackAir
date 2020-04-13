@@ -14,5 +14,5 @@ func setup(score):
 
 func _on_play_again_pressed():
 	get_tree().paused = false
-	get_tree().change_scene("res://launch.tscn")
+	get_tree().change_scene("res://game.tscn")
 	get_node("../..").queue_free()
