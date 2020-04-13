@@ -50,11 +50,11 @@ offset = Vector2( 0, 5 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="mountains" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.2, 1 )
+motion_scale = Vector2( 0.2, 0 )
 motion_mirroring = Vector2( 1077, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/mountains"]
-position = Vector2( 0, -525 )
+position = Vector2( 0, -200 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 centered = false
