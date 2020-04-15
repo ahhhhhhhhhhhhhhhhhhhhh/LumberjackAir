@@ -4,7 +4,7 @@
 [ext_resource path="res://axe.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.44685, 20.2294 )
+extents = Vector2( 7.44685, 18.2089 )
 
 [node name="Axe" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,7 +18,7 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="axe" type="Sprite" parent="body"]
-scale = Vector2( 5, 5 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
