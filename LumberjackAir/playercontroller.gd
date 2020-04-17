@@ -57,7 +57,7 @@ func _process(delta):
 			y_velocity += 5
 			x_velocity += 1.3
 			
-			var axe = load("res://axe.tscn").instance()
+			var axe = load("res://axe/axe.tscn").instance()
 			var axe_body = axe.get_node("body") #pulls out rigidbody of the axe
 			axe_body.angular_velocity = -4
 			axe_body.position = self.position

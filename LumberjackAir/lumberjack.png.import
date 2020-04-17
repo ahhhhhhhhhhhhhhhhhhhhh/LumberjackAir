@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meter.png-ed3ca4a4494efbf7579266c5b98bbd8e.stex"
+path="res://.import/lumberjack.png-7245d7b288f1b2b57a012f6cb789b4dc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://meter.png"
-dest_files=[ "res://.import/meter.png-ed3ca4a4494efbf7579266c5b98bbd8e.stex" ]
+source_file="res://lumberjack.png"
+dest_files=[ "res://.import/lumberjack.png-7245d7b288f1b2b57a012f6cb789b4dc.stex" ]
 
 [params]
 
