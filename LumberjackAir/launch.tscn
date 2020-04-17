@@ -5,7 +5,7 @@
 [ext_resource path="res://meter.png" type="Texture" id=3]
 [ext_resource path="res://meter.gd" type="Script" id=4]
 [ext_resource path="res://ticker.png" type="Texture" id=5]
-[ext_resource path="res://Catapult.tscn" type="PackedScene" id=6]
+[ext_resource path="res://catapult/Catapult.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
