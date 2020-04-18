@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://playercontroller.gd" type="Script" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://clouds/clouds.gd" type="Script" id=6]
 [ext_resource path="res://trees/trees.gd" type="Script" id=7]
 [ext_resource path="res://ground.png" type="Texture" id=8]
-[ext_resource path="res://foreground.gd" type="Script" id=9]
-[ext_resource path="res://game_end.tscn" type="PackedScene" id=10]
+[ext_resource path="res://grass.png" type="Texture" id=9]
+[ext_resource path="res://foreground.gd" type="Script" id=10]
+[ext_resource path="res://game_end.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 900, 10 )
@@ -79,11 +80,16 @@ scale = Vector2( 1025, 300 )
 texture = ExtResource( 8 )
 centered = false
 
+[node name="grass" type="Sprite" parent="ParallaxBackground/ground"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+centered = false
+
 [node name="foreground" type="Node2D" parent="."]
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="game_end" parent="CanvasLayer" instance=ExtResource( 10 )]
+[node name="game_end" parent="CanvasLayer" instance=ExtResource( 11 )]
 pause_mode = 2
 visible = false
