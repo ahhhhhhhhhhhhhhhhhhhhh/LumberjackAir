@@ -15,7 +15,7 @@ texture = ExtResource( 2 )
 offset = Vector2( -8, -19 )
 
 [node name="player_mount" type="Node2D" parent="arm"]
-position = Vector2( -38, -20 )
+position = Vector2( -40, -21 )
 
 [node name="rope" type="Sprite" parent="."]
 scale = Vector2( 3, 3 )

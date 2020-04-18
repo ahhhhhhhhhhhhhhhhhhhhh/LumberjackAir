@@ -14,7 +14,7 @@ func _process(delta):
 
 	if not animation_finished:
 		player.global_position = self.get_node("arm/player_mount").global_position
-		#player.set_rotation_degrees(90)
+		player.set_rotation_degrees($arm.rotation_degrees+45)
 		#print(player.rotation_degrees)
 	
 	$arm.rotation_degrees += rds * delta

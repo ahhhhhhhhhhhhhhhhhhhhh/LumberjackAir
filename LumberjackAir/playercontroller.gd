@@ -32,7 +32,7 @@ func _process(delta):
 	#Way to change background color if you want to change it with altitude
 	#VisualServer.set_default_clear_color(#color#)
 	
-	if manual_move_mode:
+	if manual_move_mode and launched:
 		y_velocity = 0
 		x_velocity = 0
 		if Input.is_key_pressed(KEY_LEFT):
@@ -43,6 +43,8 @@ func _process(delta):
 			self.position.y -= 150 * delta
 		if Input.is_key_pressed(KEY_DOWN):
 			self.position.y += 150 * delta
+			
+		self.rotation_degrees = 90 - y_velocity
 			
 	elif launched:
 		y_velocity -= 8.2 * delta
@@ -76,6 +78,5 @@ func _process(delta):
 				y_velocity = 0.5 * y_velocity
 				x_velocity = 0.5 * x_velocity
 				collision.collider.queue_free()
-	
-	
-	self.rotation_degrees = 90 - y_velocity
+		
+		self.rotation_degrees = 90 - y_velocity
