@@ -76,7 +76,11 @@ scale = Vector2( 1025, 300 )
 texture = ExtResource( 7 )
 centered = false
 
-[node name="grass" type="Sprite" parent="ParallaxBackground/ground"]
+[node name="grass" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.75, 1 )
+motion_mirroring = Vector2( 1025, 0 )
+
+[node name="grass" type="Sprite" parent="ParallaxBackground/grass"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 centered = false
