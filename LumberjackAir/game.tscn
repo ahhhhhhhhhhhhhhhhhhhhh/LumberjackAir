@@ -1,16 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://playercontroller.gd" type="Script" id=2]
 [ext_resource path="res://lumberjack_head.png" type="Texture" id=3]
-[ext_resource path="res://launch.tscn" type="PackedScene" id=4]
-[ext_resource path="res://mountains.png" type="Texture" id=5]
-[ext_resource path="res://clouds/clouds.gd" type="Script" id=6]
-[ext_resource path="res://ground.png" type="Texture" id=7]
-[ext_resource path="res://grass.png" type="Texture" id=8]
-[ext_resource path="res://trees/trees.gd" type="Script" id=9]
-[ext_resource path="res://foreground.gd" type="Script" id=10]
-[ext_resource path="res://game_end.tscn" type="PackedScene" id=11]
+[ext_resource path="res://glider.gd" type="Script" id=4]
+[ext_resource path="res://hang glider.png" type="Texture" id=5]
+[ext_resource path="res://launch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://mountains.png" type="Texture" id=7]
+[ext_resource path="res://clouds/clouds.gd" type="Script" id=8]
+[ext_resource path="res://ground.png" type="Texture" id=9]
+[ext_resource path="res://grass.png" type="Texture" id=10]
+[ext_resource path="res://trees/trees.gd" type="Script" id=11]
+[ext_resource path="res://foreground.gd" type="Script" id=12]
+[ext_resource path="res://game_end.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 900, 10 )
@@ -49,7 +51,16 @@ position = Vector2( 0, -5 )
 texture = ExtResource( 3 )
 offset = Vector2( 0, 5 )
 
-[node name="Node2D" parent="." instance=ExtResource( 4 )]
+[node name="glider" type="Node2D" parent="Player"]
+visible = false
+script = ExtResource( 4 )
+
+[node name="glider image" type="Sprite" parent="Player/glider"]
+position = Vector2( -8, 0.5 )
+rotation = -1.5708
+texture = ExtResource( 5 )
+
+[node name="Node2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( 150, -590 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -61,19 +72,19 @@ motion_mirroring = Vector2( 1077, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/mountains"]
 position = Vector2( 0, -200 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.6, 1 )
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 
 [node name="ground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 1025, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ground"]
 scale = Vector2( 1025, 300 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="grass" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -82,18 +93,18 @@ motion_mirroring = Vector2( 1025, 0 )
 
 [node name="grass" type="Sprite" parent="ParallaxBackground/grass"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="trees" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 1 )
-script = ExtResource( 9 )
+script = ExtResource( 11 )
 
 [node name="foreground" type="Node2D" parent="."]
-script = ExtResource( 10 )
+script = ExtResource( 12 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="game_end" parent="CanvasLayer" instance=ExtResource( 11 )]
+[node name="game_end" parent="CanvasLayer" instance=ExtResource( 13 )]
 pause_mode = 2
 visible = false

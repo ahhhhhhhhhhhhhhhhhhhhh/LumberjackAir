@@ -23,11 +23,15 @@ func _process(delta):
 	#moves the ground along with the player
 	ground.position.x = self.position.x
 	
-	if Input.is_action_just_pressed("1"):
-		manual_move_mode = not manual_move_mode
-		
-	if Input.is_action_just_pressed("2"):
-		fast_shoot_mode = not fast_shoot_mode
+	if launched:
+		if Input.is_action_just_pressed("1"):
+			manual_move_mode = not manual_move_mode
+			
+		if Input.is_action_just_pressed("2"):
+			fast_shoot_mode = not fast_shoot_mode
+			
+		if Input.is_action_just_pressed("glider"):
+			$glider.activated = true
 	
 	#Way to change background color if you want to change it with altitude
 	#VisualServer.set_default_clear_color(#color#)

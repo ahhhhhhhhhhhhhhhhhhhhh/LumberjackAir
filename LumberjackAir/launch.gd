@@ -13,10 +13,7 @@ func _process(delta):
 		get_parent().setup(score)
 		catapult_finished = true
 
-
 #Meter reports score to this script, which gets the main game going
 func launch_game(score2):
 	$Catapult.start_animation()
 	score = score2
-	
-	
