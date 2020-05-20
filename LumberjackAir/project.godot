@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LumberjackAir"
-run/main_scene="res://game.tscn"
+run/main_scene="res://mainmenu.tscn"
 config/icon="res://icon.png"
 
 [display]
