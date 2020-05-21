@@ -32,6 +32,9 @@ func _process(delta):
 			
 		if Input.is_action_just_pressed("glider"):
 			$glider.activated = true
+			
+		if Input.is_action_just_pressed("fireworks"):
+			$fireworks.activated = true
 	
 	#Way to change background color if you want to change it with altitude
 	#VisualServer.set_default_clear_color(#color#)
