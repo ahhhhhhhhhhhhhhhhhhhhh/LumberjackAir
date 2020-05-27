@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fireworkanimation4.png-4be9298b654d75ee864e10c2569f6ea5.stex"
+path="res://.import/fireworkanimation3.png-f2ad3294a40f6b782d0b938e28ba46b6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fireworkanimation4.png"
-dest_files=[ "res://.import/fireworkanimation4.png-4be9298b654d75ee864e10c2569f6ea5.stex" ]
+source_file="res://firework/fireworkanimation3.png"
+dest_files=[ "res://.import/fireworkanimation3.png-f2ad3294a40f6b782d0b938e28ba46b6.stex" ]
 
 [params]
 

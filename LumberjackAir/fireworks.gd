@@ -15,6 +15,7 @@ func _process(delta):
 	if activated:
 		if just_activated:
 			self.visible = true
+			get_node("AnimatedSprite").play()
 			just_activated = false
 	
 		if get_parent().y_velocity < 0:
