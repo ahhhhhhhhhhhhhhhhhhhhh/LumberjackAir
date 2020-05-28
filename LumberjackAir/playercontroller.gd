@@ -13,10 +13,14 @@ var launched = false
 var ground = null
 var starting_x = null #used for determining distance traveled later
 
+var distance_high = 0
+var high_score = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ground = get_parent().get_node("ground")
 	starting_x = self.position.x
+	load_save()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -77,10 +81,37 @@ func _process(delta):
 				x_velocity = 0
 				var distance_traveled = int(self.position.x - starting_x)
 				print("You traveled ", distance_traveled, " feet")
-				get_parent().get_node("CanvasLayer/game_end").setup(distance_traveled)
+				if distance_traveled > distance_high:
+					distance_high = distance_traveled
+					high_score = true
+				var save_file = File.new()
+				save_file.open("res://save_file", File.WRITE)
+				save_file.store_var(save())
+				save_file.close()
+				print("Best dis: ", distance_high)
+				get_parent().get_node("CanvasLayer/game_end").setup(distance_traveled, high_score, distance_high)
 			else:
 				y_velocity = 0.5 * y_velocity
 				x_velocity = 0.5 * x_velocity
 				collision.collider.queue_free()
 		
 		self.rotation_degrees = 90 - y_velocity
+		
+		
+func save():
+	var save_state = {
+		"record distance" : distance_high
+	}
+	return save_state
+	
+func load_save():
+	var save_file = File.new()
+	save_file.open("res://save_file", File.READ)
+	var load_var = save_file.get_var()
+	print(load_var)
+	if !save_file.eof_reached(): 
+		print("loaded")
+		distance_high = load_var["record distance"]
+	save_file.close()
+
+#func

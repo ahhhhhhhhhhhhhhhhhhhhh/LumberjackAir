@@ -5,10 +5,13 @@ extends Control
 func _ready():
 	pass # Replace with function body.
 
-func setup(score):
+func setup(score, high_score_bool, high_score):
 	get_tree().paused = true
 	self.visible = true
-	$Ft_label.text = "You went " + str(score) + " feet"
+	if high_score_bool:
+		$Ft_label.text = "You went " + str(score) + " feet\nNew High Score!!"
+	else:
+		$Ft_label.text = "You went " + str(score) + " feet\nHigh Score: " + str(high_score)
 
 func _on_play_again_pressed():
 	get_tree().paused = false
