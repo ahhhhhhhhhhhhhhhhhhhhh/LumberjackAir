@@ -5,20 +5,20 @@
 [ext_resource path="res://lumberjack_head.png" type="Texture" id=3]
 [ext_resource path="res://fireworks.gd" type="Script" id=4]
 [ext_resource path="res://firework/firework.png" type="Texture" id=5]
-[ext_resource path="res://glider.gd" type="Script" id=6]
-[ext_resource path="res://hang glider.png" type="Texture" id=7]
-[ext_resource path="res://launch.tscn" type="PackedScene" id=8]
-[ext_resource path="res://mountains.png" type="Texture" id=9]
-[ext_resource path="res://clouds/clouds.gd" type="Script" id=10]
-[ext_resource path="res://ground.png" type="Texture" id=11]
-[ext_resource path="res://grass 2.png" type="Texture" id=12]
-[ext_resource path="res://trees/trees.gd" type="Script" id=13]
-[ext_resource path="res://foreground.gd" type="Script" id=14]
-[ext_resource path="res://game_end.tscn" type="PackedScene" id=15]
-[ext_resource path="res://firework/firworkanimation1.2.png" type="Texture" id=16]
-[ext_resource path="res://firework/fireworkanimation3.png" type="Texture" id=17]
-[ext_resource path="res://firework/fireworkanimation2.png" type="Texture" id=18]
-[ext_resource path="res://firework/fireworkanimation4.png" type="Texture" id=19]
+[ext_resource path="res://firework/firworkanimation1.2.png" type="Texture" id=6]
+[ext_resource path="res://firework/fireworkanimation2.png" type="Texture" id=7]
+[ext_resource path="res://firework/fireworkanimation3.png" type="Texture" id=8]
+[ext_resource path="res://firework/fireworkanimation4.png" type="Texture" id=9]
+[ext_resource path="res://glider.gd" type="Script" id=10]
+[ext_resource path="res://hang glider.png" type="Texture" id=11]
+[ext_resource path="res://launch.tscn" type="PackedScene" id=12]
+[ext_resource path="res://mountains.png" type="Texture" id=13]
+[ext_resource path="res://clouds/clouds.gd" type="Script" id=14]
+[ext_resource path="res://ground.png" type="Texture" id=15]
+[ext_resource path="res://grass 2.png" type="Texture" id=16]
+[ext_resource path="res://trees/trees.gd" type="Script" id=17]
+[ext_resource path="res://foreground.gd" type="Script" id=18]
+[ext_resource path="res://game_end.tscn" type="PackedScene" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 900, 10 )
@@ -28,7 +28,7 @@ extents = Vector2( 2.68762, 13.6138 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 16 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "firework",
 "speed": 5.0
@@ -80,14 +80,14 @@ animation = "firework"
 
 [node name="glider" type="Node2D" parent="Player"]
 visible = false
-script = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="glider image" type="Sprite" parent="Player/glider"]
 position = Vector2( -8, 0.5 )
 rotation = -1.5708
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 
-[node name="Node2D" parent="." instance=ExtResource( 8 )]
+[node name="Node2D" parent="." instance=ExtResource( 12 )]
 position = Vector2( 150, -590 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -99,19 +99,19 @@ motion_mirroring = Vector2( 1077, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/mountains"]
 position = Vector2( 0, -200 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 9 )
+texture = ExtResource( 13 )
 centered = false
 
 [node name="clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.6, 1 )
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="ground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 1025, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ground"]
 scale = Vector2( 1025, 300 )
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 centered = false
 
 [node name="grass" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -120,18 +120,18 @@ motion_mirroring = Vector2( 1025, 0 )
 
 [node name="grass" type="Sprite" parent="ParallaxBackground/grass"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 12 )
+texture = ExtResource( 16 )
 centered = false
 
 [node name="trees" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 1 )
-script = ExtResource( 13 )
+script = ExtResource( 17 )
 
 [node name="foreground" type="Node2D" parent="."]
-script = ExtResource( 14 )
+script = ExtResource( 18 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="game_end" parent="CanvasLayer" instance=ExtResource( 15 )]
+[node name="game_end" parent="CanvasLayer" instance=ExtResource( 19 )]
 pause_mode = 2
 visible = false

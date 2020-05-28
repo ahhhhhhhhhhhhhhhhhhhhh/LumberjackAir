@@ -88,7 +88,7 @@ func _process(delta):
 					distance_high = distance_traveled
 					high_score = true
 				var save_file = File.new()
-				save_file.open("res://save_file", File.WRITE)
+				save_file.open("res://save_file.txt", File.WRITE)
 				save_file.store_var(save())
 				save_file.close()
 				print("Best dis: ", distance_high)
@@ -109,7 +109,7 @@ func save():
 	
 func load_save():
 	var save_file = File.new()
-	save_file.open("res://save_file", File.READ)
+	save_file.open("res://save_file.txt", File.READ)
 	var load_var = save_file.get_var()
 	print(load_var)
 	if !save_file.eof_reached(): 
