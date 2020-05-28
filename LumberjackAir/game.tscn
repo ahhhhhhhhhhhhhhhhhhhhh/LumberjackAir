@@ -77,6 +77,7 @@ texture = ExtResource( 5 )
 position = Vector2( 3, -2 )
 frames = SubResource( 3 )
 animation = "firework"
+playing = true
 
 [node name="glider" type="Node2D" parent="Player"]
 visible = false

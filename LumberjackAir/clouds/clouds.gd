@@ -12,10 +12,10 @@ func _ready():
 	generator.sprite_scale = Vector2(3, 3)
 	generator.layer = self
 	generator.motion_scale = self.motion_scale
-	generator.move_over = 150
-	generator.move_random = 80
+	generator.move_over = 35
+	generator.move_random = 20
 	generator.y_placement = -260
-	generator.y_random = 600
+	generator.y_random = 2400
 	
 	#giving it image(s) to work with
 	for i in range(1, 7):

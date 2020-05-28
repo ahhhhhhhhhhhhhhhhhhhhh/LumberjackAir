@@ -5,7 +5,6 @@ var x_velocity = 0
 
 var max_velocity = 15
 
-
 var manual_move_mode = false
 var fast_shoot_mode = false
 var launched = false
