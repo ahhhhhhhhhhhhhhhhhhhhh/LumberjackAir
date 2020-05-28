@@ -15,10 +15,11 @@
 [ext_resource path="res://mountains.png" type="Texture" id=13]
 [ext_resource path="res://clouds/clouds.gd" type="Script" id=14]
 [ext_resource path="res://ground.png" type="Texture" id=15]
-[ext_resource path="res://grass 2.png" type="Texture" id=16]
+[ext_resource path="res://grass2.png" type="Texture" id=16]
 [ext_resource path="res://trees/trees.gd" type="Script" id=17]
 [ext_resource path="res://foreground.gd" type="Script" id=18]
 [ext_resource path="res://game_end.tscn" type="PackedScene" id=19]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 900, 10 )
