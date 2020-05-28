@@ -25,5 +25,4 @@ texture = ExtResource( 3 )
 position = Vector2( -1.5, -1.5 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 4 )
-frame = 1
 playing = true

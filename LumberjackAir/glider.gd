@@ -16,6 +16,9 @@ func _process(delta):
 		if just_activated:
 			self.visible = true
 			just_activated = false
+			
+			if get_parent().y_velocity < 0:
+				get_parent().y_velocity /= 2
 	
 		if get_parent().y_velocity < 0:
 			get_parent().y_velocity += 6 * delta

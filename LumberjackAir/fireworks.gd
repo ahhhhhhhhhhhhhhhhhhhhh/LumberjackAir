@@ -26,4 +26,4 @@ func _process(delta):
 			self.visible = false
 		
 		get_parent().x_velocity += potency * delta
-		get_parent().y_velocity += 7 * delta
+		get_parent().y_velocity += 9 * delta

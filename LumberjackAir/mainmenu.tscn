@@ -5,7 +5,7 @@
 [ext_resource path="res://fonts/Kanit-Regular.tres" type="DynamicFont" id=3]
 
 [node name="mainmenu" type="Sprite"]
-position = Vector2( 513, 333 )
+position = Vector2( 513, 337 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
