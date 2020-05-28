@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://playercontroller.gd" type="Script" id=2]
@@ -11,14 +11,16 @@
 [ext_resource path="res://firework/fireworkanimation4.png" type="Texture" id=9]
 [ext_resource path="res://glider.gd" type="Script" id=10]
 [ext_resource path="res://hang_glider.png" type="Texture" id=11]
-[ext_resource path="res://launch.tscn" type="PackedScene" id=12]
-[ext_resource path="res://mountains.png" type="Texture" id=13]
-[ext_resource path="res://clouds/clouds.gd" type="Script" id=14]
-[ext_resource path="res://ground.png" type="Texture" id=15]
-[ext_resource path="res://grass2.png" type="Texture" id=16]
-[ext_resource path="res://trees/trees.gd" type="Script" id=17]
-[ext_resource path="res://foreground.gd" type="Script" id=18]
-[ext_resource path="res://game_end.tscn" type="PackedScene" id=19]
+[ext_resource path="res://upgrades/helmet.gd" type="Script" id=12]
+[ext_resource path="res://upgrades/helmet.png" type="Texture" id=13]
+[ext_resource path="res://launch.tscn" type="PackedScene" id=14]
+[ext_resource path="res://mountains.png" type="Texture" id=15]
+[ext_resource path="res://clouds/clouds.gd" type="Script" id=16]
+[ext_resource path="res://ground.png" type="Texture" id=17]
+[ext_resource path="res://grass2.png" type="Texture" id=18]
+[ext_resource path="res://trees/trees.gd" type="Script" id=19]
+[ext_resource path="res://foreground.gd" type="Script" id=20]
+[ext_resource path="res://game_end.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 900, 10 )
@@ -66,6 +68,7 @@ texture = ExtResource( 3 )
 offset = Vector2( 0, 5 )
 
 [node name="fireworks" type="Node2D" parent="Player"]
+editor/display_folded = true
 visible = false
 script = ExtResource( 4 )
 
@@ -77,9 +80,11 @@ texture = ExtResource( 5 )
 position = Vector2( 3, -2 )
 frames = SubResource( 3 )
 animation = "firework"
+frame = 1
 playing = true
 
 [node name="glider" type="Node2D" parent="Player"]
+editor/display_folded = true
 visible = false
 script = ExtResource( 10 )
 
@@ -88,7 +93,16 @@ position = Vector2( -8, 0.5 )
 rotation = -1.5708
 texture = ExtResource( 11 )
 
-[node name="Node2D" parent="." instance=ExtResource( 12 )]
+[node name="helmet" type="Node2D" parent="Player"]
+editor/display_folded = true
+visible = false
+script = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="Player/helmet"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 13 )
+
+[node name="Node2D" parent="." instance=ExtResource( 14 )]
 position = Vector2( 150, -590 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -100,19 +114,19 @@ motion_mirroring = Vector2( 1077, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/mountains"]
 position = Vector2( 0, -200 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 13 )
+texture = ExtResource( 15 )
 centered = false
 
 [node name="clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.6, 1 )
-script = ExtResource( 14 )
+script = ExtResource( 16 )
 
 [node name="ground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 1025, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ground"]
 scale = Vector2( 1025, 300 )
-texture = ExtResource( 15 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="grass" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -121,18 +135,18 @@ motion_mirroring = Vector2( 1025, 0 )
 
 [node name="grass" type="Sprite" parent="ParallaxBackground/grass"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="trees" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 1 )
-script = ExtResource( 17 )
+script = ExtResource( 19 )
 
 [node name="foreground" type="Node2D" parent="."]
-script = ExtResource( 18 )
+script = ExtResource( 20 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="game_end" parent="CanvasLayer" instance=ExtResource( 19 )]
+[node name="game_end" parent="CanvasLayer" instance=ExtResource( 21 )]
 pause_mode = 2
 visible = false
