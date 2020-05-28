@@ -1,10 +1,9 @@
 extends Node2D
 
 # Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var activated = false
 var just_activated = true
+var potency = 15
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +16,12 @@ func _process(delta):
 			self.visible = true
 			get_node("AnimatedSprite").play()
 			just_activated = false
-	
-		if get_parent().y_velocity < 0:
-			get_parent().y_velocity += 6 * delta
-			get_parent().x_velocity += 2 * delta
+		
+		var rotation = get_parent().rotation_degrees
+		rotation - 90
+		
+		var x = sin(deg2rad(rotation))
+		var y = cos(deg2rad(rotation))
+		
+		get_parent().x_velocity += potency * x * delta
+		get_parent().y_velocity -= potency * y * delta - 5 * delta
